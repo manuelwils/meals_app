@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => const CategoriesScreen(),
         CategoryMealsScreen.routeName: (_) => const CategoryMealsScreen(),
       },
-      title: 'DeliMeals',
+      title: 'OmaMeals',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
