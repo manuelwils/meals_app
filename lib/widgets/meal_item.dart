@@ -23,13 +23,26 @@ class MealItem extends StatelessWidget {
   String get complexityText {
     switch (complexity) {
       case Complexity.simple:
-        return 'simple';
+        return 'Simple';
       case Complexity.challenging:
-        return 'challenging';
+        return 'Challenging';
       case Complexity.hard:
-        return 'hard';
+        return 'Hard';
       default:
-        return 'unknown';
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.affordable:
+        return 'Affordable';
+      case Affordability.pricey:
+        return 'Pricey';
+      case Affordability.luxurious:
+        return 'Expensive';
+      default:
+        return 'Unknown';
     }
   }
 
@@ -87,33 +100,28 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        const Icon(Icons.schedule),
-                        const SizedBox(width: 6),
-                        Text('$duration min'),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const Icon(Icons.schedule),
+                      const SizedBox(width: 6),
+                      Text('$duration min'),
+                    ],
                   ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        const Icon(Icons.work),
-                        const SizedBox(width: 6),
-                        Text(complexityText),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const Icon(Icons.work),
+                      const SizedBox(width: 6),
+                      Text(complexityText),
+                    ],
                   ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        const Icon(Icons.work),
-                        const SizedBox(width: 6),
-                        Text(complexityText),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const Icon(Icons.attach_money),
+                      const SizedBox(width: 6),
+                      Text(affordabilityText),
+                    ],
                   ),
                 ],
               ),
