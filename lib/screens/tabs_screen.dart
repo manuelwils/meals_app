@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
 
 import './categories_screens.dart';
-import './favorite_screen.dart';
+import 'favorite_meals_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);
+
+  static const String routeName = '/home';
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -18,7 +20,7 @@ class _TabsScreenState extends State<TabsScreen> {
       'title': 'OmaMeals',
     },
     {
-      'route': const FavoriteScreen(),
+      'route': const FavoriteMealsScreen(),
       'title': 'Your Favorite',
     }
   ];
