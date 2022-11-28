@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => const TabsScreen(),
         CategoryMealsScreen.routeName: (_) => const CategoryMealsScreen(),
         MealDetailScreen.routeName: (_) => const MealDetailScreen(),
-        FiltersScreen.routeName: (_) => const FiltersScreen(),
+        FiltersScreen.routeName: (_) => FiltersScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'OmaMeals',
