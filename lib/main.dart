@@ -9,9 +9,14 @@ import './dummy_meals.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   final Map<String, bool> _filters = {
     'gluten': false,
     'lactose': false,
@@ -21,6 +26,9 @@ class MyApp extends StatelessWidget {
 
   final List<Meal> _availableMeals = dummyMeals;
 
+  void _setFilters(Map<String, bool> filters) {
+    
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
