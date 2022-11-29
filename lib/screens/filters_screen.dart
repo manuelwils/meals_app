@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
-  FiltersScreen({Key? key}) : super(key: key);
+  const FiltersScreen({Key? key}) : super(key: key);
   static String routeName = '/filters';
 
   @override

@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
 
+import './models/meal.dart';
 import './screens/meal_detail.dart';
 import './screens/filters_screen.dart';
 import './screens/category_meals_screen.dart';
 import './screens/tabs_screen.dart';
+import './dummy_meals.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegan': false,
+    'vegetarian': false,
+  };
+
+  final List<Meal> _availableMeals = dummyMeals;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
         '/': (_) => const TabsScreen(),
-        CategoryMealsScreen.routeName: (_) => const CategoryMealsScreen(),
+        CategoryMealsScreen.routeName: (_) =>
+            CategoryMealsScreen(meals: _availableMeals),
         MealDetailScreen.routeName: (_) => const MealDetailScreen(),
-        FiltersScreen.routeName: (_) => FiltersScreen(),
+        FiltersScreen.routeName: (_) => const FiltersScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'OmaMeals',
